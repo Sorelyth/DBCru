@@ -1,9 +1,9 @@
 <?php
  include 'configuracion.php';
 
-if(isset($_POST['correo']) && isset($_POST['contraseña'])){
-    $vcorreo=$_POST['correo'];
-    $vcontra=$_POST['contraseña'];
+if(isset($_GET['correo']) && isset($_GET['contraseña'])){
+    $vcorreo=$_GET['correo'];
+    $vcontra=$_GET['contraseña'];
   
   $sentencia="SELECT nombre, correo, contraseña FROM usuarios WHERE correo='".$vcorreo."'";
   $result = mysqli_prepare($mysqli,$sentencia);
