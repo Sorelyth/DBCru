@@ -1,7 +1,39 @@
 <?php
  include 'configuracion.php';
 
-if(isset($_GET['correo']) && isset($_GET['contraseña'])){
+ $json=array();
+
+	if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
+		$correo=$_GET['correo'];
+		$contraseña=$_GET['contraseña'];
+		
+		$consulta="SELECT correo, contraseña, nombre FROM usuarios WHERE correo= '{$correo}' AND contraseña= '{$contraseña}'";
+		$resultado=mysqli_query($mysqli,$consulta);
+
+		if($consulta){
+			if($reg=mysqli_fetch_array($resultado)){
+				$json['datos'][]=$reg;
+			}
+			mysqli_close($mysqli);
+			echo json_encode($json);
+		}
+		else{
+			$results["correo"]='';
+			$results["contraseña"]='';
+			$results["nombre"]='';
+			$json['datos'][]=$results;
+			echo json_encode($json);
+		}	
+	}
+	else{
+		   	$results["correo"]='';
+			$results["contraseña"]='';
+			$results["nombre"]='';
+			$json['datos'][]=$results;
+			echo json_encode($json);
+		}
+
+/*if(isset($_GET['correo']) && isset($_GET['contraseña'])){
     $vcorreo=$_GET['correo'];
     $vcontra=$_GET['contraseña'];
   
@@ -24,6 +56,6 @@ if(isset($_GET['correo']) && isset($_GET['contraseña'])){
   mysqli_stmt_close($result);
   mysqli_close($mysqli);
   echo json_encode($result);
-}
+}*/
 
 ?>
