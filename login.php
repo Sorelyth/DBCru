@@ -13,7 +13,7 @@
     mysqli_stmt_store_result($resultado);
     mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
     mysqli_stmt_fetch($resultado);
-    
+    echo $resultado;
   }
 
 	/*if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
