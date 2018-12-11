@@ -13,9 +13,9 @@
     mysqli_stmt_store_result($resultado);
     mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
     mysqli_stmt_fetch($resultado);
-    if($resultado){echo $resultado;}
-    else{echo "no sirve wey";}
-    
+
+    echo $nombre;
+
   }
 
 	/*if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
