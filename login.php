@@ -3,14 +3,14 @@
 
  $json=array();
 
- if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
+ if(isset($_GET["correo"]) && isset($_GET["contrasena"])){
 
-  echo "el get funciona";
+  echo "el get funciona ";
 
   $correo=$_GET['correo'];
-		$contraseña=$_GET['contraseña'];
+		$contrasena=$_GET['contrasena'];
 
-		$consulta="SELECT correo, contraseña, nombre FROM usuarios WHERE correo= '{$correo}' AND contraseña= '{$contraseña}'";
+		$consulta="SELECT correo, contrasena, nombre FROM usuarios WHERE correo= '".$correo."' AND contrasena= '".$contrasena."'";
 		$resultado=mysqli_query($mysqli,$consulta);
 
 if($resultado){echo "la consulta funciona";}
