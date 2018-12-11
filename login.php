@@ -25,7 +25,7 @@
     else{
     echo '<script type="text/javascript">alert("Usuario o contraseña incorrecto(a).")</script>';
     }
-    echo $resultado
+    echo $resultado;
     mysqli_stmt_close($resultado);
     mysqli_close($mysqli);
 
