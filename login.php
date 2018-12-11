@@ -4,17 +4,16 @@
  $json=array();
 
  if(isset($_GET["correo"]) && isset($_GET["contrasena"])){
-
-  echo "el get funciona ";
-
-  $correo=$_GET['correo'];
+    $correo=$_GET['correo'];
 		$contrasena=$_GET['contrasena'];
 
 		$consulta="SELECT correo, contrasena, nombre FROM usuarios WHERE correo= '".$correo."' AND contrasena= '".$contrasena."'";
-		$resultado=mysqli_query($mysqli,$consulta);
-
-if($resultado){echo "la consulta funciona";}
-else{echo "la consulta no sirveeee";}
+    $resultado = mysqli_prepare($mysqli,$consulta);
+    mysqli_stmt_execute($resultado);
+    mysqli_stmt_store_result($resultado);
+    mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
+    mysqli_stmt_fetch($resultado);
+    
   }
 
 	/*if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
