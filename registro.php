@@ -22,7 +22,7 @@ $json=array();
        $estado=$_POST['estado'];
 
    $consulta="INSERT INTO usuarios(nombre,correo,contraseña,edad,cedula,pais,ciudad,cargo,componente,fase,equiponal,equipociudad,estado)
-   VALUES ('{$nombre}','{$correo}','{$contraseña}','{$edad}','{$cedula}','{$pais}','{$ciudad}','{$cargo}','{$componente}','{$fase}','{$vequiponal}','{$equipociudad}','{$estado}')";
+   VALUES ('{$nombre}','{$correo}','{$contraseña}','{$edad}','{$cedula}','{$pais}','{$ciudad}','{$cargo}','{$componente}','{$fase}','{$equiponal}','{$equipociudad}','{$estado}')";
    $resultado=mysqli_query($mysqli,$consulta);
 
    if($consulta){
