@@ -13,17 +13,17 @@
     mysqli_stmt_store_result($resultado);
     mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
     mysqli_stmt_fetch($resultado);
+    echo $nombre;
 
     if($consulta){
-			if(mysqli_fetch_array($resultado)){
-				$json['datos'][]=$resultado;
+			if($reg=mysqli_fetch_array($resultado)){
+				$json['datos'][]=$reg;
 			}
 			mysqli_close($mysqli);
       echo $json;
 			echo json_encode($json);
 		}
-    echo $json;
-    echo json_encode($json);
+
   }
 
 	/*if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
