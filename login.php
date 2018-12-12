@@ -15,14 +15,15 @@
     mysqli_stmt_fetch($resultado);
 
     if($consulta){
-			if($reg=mysqli_fetch_array($resultado)){
-				$json['datos'][]=$reg;
+			if(mysqli_fetch_array($resultado)){
+				$json['datos'][]=$resultado;
 			}
 			mysqli_close($mysqli);
       echo $json;
 			echo json_encode($json);
 		}
-
+    echo $json;
+    echo json_encode($json);
   }
 
 	/*if(isset($_GET["correo"]) && isset($_GET["contraseña"])){
