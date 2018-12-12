@@ -14,9 +14,12 @@
     mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
     mysqli_stmt_fetch($resultado);
 
-    echo $nombre;
-    echo $correo;
-    echo $contrasena;
+    $json['nombre']=$nombre;
+    $json['correo']=$correo;
+    $json['contrasena']=$contrasena;
+    echo $json;
+    echo json_encode($json);
+
 
   }
 
