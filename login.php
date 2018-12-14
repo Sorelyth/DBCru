@@ -20,6 +20,6 @@
 
     echo json_encode($json);
 
-    header('Content-Type: application/json; charset=utf8');
+    //header('Content-Type: application/json; charset=utf8');
   }
 ?>
