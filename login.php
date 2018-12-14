@@ -11,7 +11,7 @@
     $resultado = mysqli_prepare($mysqli,$consulta);
     mysqli_stmt_execute($resultado);
     mysqli_stmt_store_result($resultado);
-    mysqli_stmt_bind_result($resultado,$correo,$contraseña,$nombre);
+    mysqli_stmt_bind_result($resultado,$correo,$contrasena,$nombre);
     mysqli_stmt_fetch($resultado);
 
     $json['nombre']=$nombre;
